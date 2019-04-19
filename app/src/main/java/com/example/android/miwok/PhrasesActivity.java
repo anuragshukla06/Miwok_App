@@ -31,7 +31,7 @@ public class PhrasesActivity extends AppCompatActivity {
             phrasesTranslation.add(new Word(miwokTranslation[i], englishTranslations[i]));
         }
 
-        WordAdapter wordAdapter = new WordAdapter(this, phrasesTranslation);
+        WordAdapter wordAdapter = new WordAdapter(this, phrasesTranslation, R.color.category_phrases);
         phrasesListView.setAdapter(wordAdapter);
 
     }
