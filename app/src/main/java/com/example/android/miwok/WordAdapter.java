@@ -1,6 +1,8 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.content.Context;
 import android.view.View;
@@ -18,7 +20,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
     private int mbackgroundColor;
 
     WordAdapter(Activity context, ArrayList<Word> words, int backgroundColorId){
-        super(context, 0, words);
+        super(context, 0, words); // You no need to specify the layout_resource id because we are overriding the getView.
         mbackgroundColor = backgroundColorId;
     }
 
@@ -38,6 +40,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         defaultTranslation.setText(word.getDefaultTranslation());
         miwokTranslation.setText(word.getMiwokTranslation());
+
+
         if (word.hasImage()) {
             itemImage.setImageResource(word.getImageResourceId());
             itemImage.setVisibility(View.VISIBLE);
@@ -48,4 +52,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         return listItemView;
     }
+
+
 }
